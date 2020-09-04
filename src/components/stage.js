@@ -4,7 +4,7 @@ import Cell from "./cell";
 
 const Stage = ({ stage }) => (
   <div>
-    <Cell />
+    {stage.map((row) => row.map((cell, v) => <Cell key={v} type={cell[0]} />))}
   </div>
 );
 
