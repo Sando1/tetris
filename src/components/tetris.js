@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Stage from "./stage";
 import StartButton from "./startButton";
 import Display from "./display";
+import Control from "./control";
 //styles
 import { StyledTetrisWrapper } from "./styles/styledTetris";
 
@@ -101,7 +102,7 @@ const Tetris = () => {
       onKeyDown={(e) => move(e)}
       onKeyUp={keyUp}
     >
-      <Row className="justify-content-md-center" noGutters>
+      <Row className="justify-content-xs-center" noGutters>
         {gameOver ? (
           <Col xs={4} md={2}>
             <Display gameOver={gameOver} text="Game Over" />
@@ -121,7 +122,7 @@ const Tetris = () => {
         )}
       </Row>
 
-      <Row className="justify-content-md-center" noGutters>
+      <Row className="justify-content-xs-center" noGutters>
         <Col
           xs={12}
           sm={{ span: 10, offset: 1 }}
@@ -131,8 +132,39 @@ const Tetris = () => {
           <Stage stage={stage} />
         </Col>
       </Row>
-      <Row className="justify-content-md-center" noGutters>
-        <StartButton callback={startGame} />
+      <Row className="justify-content-xs-center" noGutters>
+        <Col xs={{ span: 6, offset: 2 }}>
+          <Row className="justify-content-xs-center" noGutters>
+            <Col xs={{ span: 3, offset: 3 }}>
+              <Control
+                text="&uarr;"
+                callback={() => {
+                  playerRotate(stage, 1);
+                }}
+              />
+            </Col>
+          </Row>
+          <Row className="justify-content-xs-center" noGutters>
+            <Col xs={12}>
+              <Control
+                text="&larr;"
+                callback={() => {
+                  movePlayer(-1);
+                }}
+              />
+              <Control text="&darr;" callback={dropPlayer} />
+              <Control
+                text="&rarr;"
+                callback={() => {
+                  movePlayer(1);
+                }}
+              />
+            </Col>
+          </Row>
+        </Col>
+        <Col xs={4}>
+          <StartButton callback={startGame} />
+        </Col>
       </Row>
     </StyledTetrisWrapper>
   );

@@ -13,5 +13,4 @@ export const StyledButton = styled.button`
   font-size: 0.75rem;
   outline: none;
   cursor: pointer;
-  margin: 15px 45px 15px 45px;
 `;
