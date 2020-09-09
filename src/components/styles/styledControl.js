@@ -10,4 +10,6 @@ export const StyledControl = styled.button`
   width: 50px;
   height: 50px;
   margin: 3px;
+  text-align: center;
+  margin: auto;
 `;

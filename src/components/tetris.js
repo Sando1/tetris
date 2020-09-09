@@ -138,7 +138,8 @@ const Tetris = () => {
             <Col xs={{ span: 3, offset: 3 }}>
               <Control
                 text="&uarr;"
-                callback={() => {
+                callback={(e) => {
+                  e.preventDefault();
                   playerRotate(stage, 1);
                 }}
               />
@@ -148,14 +149,22 @@ const Tetris = () => {
             <Col xs={12}>
               <Control
                 text="&larr;"
-                callback={() => {
+                callback={(e) => {
+                  e.preventDefault();
                   movePlayer(-1);
                 }}
               />
-              <Control text="&darr;" callback={dropPlayer} />
+              <Control
+                text="&darr;"
+                callback={(e) => {
+                  e.preventDefault();
+                  dropPlayer();
+                }}
+              />
               <Control
                 text="&rarr;"
-                callback={() => {
+                callback={(e) => {
+                  e.preventDefault();
                   movePlayer(1);
                 }}
               />
@@ -163,7 +172,12 @@ const Tetris = () => {
           </Row>
         </Col>
         <Col xs={4}>
-          <StartButton callback={startGame} />
+          <StartButton
+            callback={(e) => {
+              e.preventDefault();
+              startGame();
+            }}
+          />
         </Col>
       </Row>
     </StyledTetrisWrapper>
