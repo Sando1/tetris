@@ -2,16 +2,16 @@ import styled from "styled-components";
 
 export const StyledButton = styled.button`
   box-sizing: border-box;
-  margin: 0 0 20px 0;
-  padding: 20px;
-  min-height: 30px;
+  padding: 7px;
+  min-height: 20px;
   width: 100%;
   border-radius: 20px;
   border: none;
   color: white;
   background: #333;
   font-family: Pixel, Arial, sans-serif;
-  font-size: 1rem;
+  font-size: 0.75rem;
   outline: none;
   cursor: pointer;
+  margin: 15px 45px 15px 45px;
 `;

@@ -1,10 +1,13 @@
 import React from "react";
 import Tetris from "./components/tetris";
+import { Container } from "react-bootstrap";
+
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => (
-  <div className="App">
+  <Container className="App">
     <Tetris />
-  </div>
+  </Container>
 );
 
 export default App;
